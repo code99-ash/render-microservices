@@ -1,19 +1,22 @@
 services:
-  - name: api1
+  - type: web
+    name: api1
     buildCommand: npm run build
     startCommand: npm start
     env:
       - key: PORT
         value: "4000"
 
-  - name: api2
+  - type: web
+    name: api2
     buildCommand: npm run build
     startCommand: npm start
     env:
       - key: PORT
         value: "4001"
-
-  - name: nginx
+        
+  - type: web
+    name: nginx
     buildCommand: ./build-nginx.sh
     startCommand: ./start-nginx.sh
     ports:
